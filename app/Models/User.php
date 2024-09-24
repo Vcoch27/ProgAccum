@@ -21,6 +21,12 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'profile_picture',
+        'subscription_type',
+        'upload_quota',
+        'max_attempts_per_day',
+        'daily_attempts',
+        'role',
     ];
 
     /**

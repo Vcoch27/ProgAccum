@@ -43,7 +43,19 @@
                 {{ __('Log in') }}
             </x-primary-button>
         </div>
-        <hr>
+        
+        
+        <div class="google-btn">
+            <hr>
+            <h2>Or</h2>
+           <button type="button" class="login-with-google-btn" >
+            
+                <a href="{{ route('google-auth') }}">
+                    Continue with Google
+                </a>
+            </button>
+        </div>
+        
         
     </form>
 </x-guest-layout>
