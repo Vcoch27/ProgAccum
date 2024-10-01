@@ -13,7 +13,7 @@ class UserController extends Controller
         $user = Auth::user();
 
         if ($user->role === 'user') {
-            return view('client/pages/index');
+            return view('client/pages/homepage');
         } 
         abort(401);
     }

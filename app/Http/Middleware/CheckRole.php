@@ -22,11 +22,12 @@ class CheckRole
         if (Auth::check()) {
             if (Auth::user()->role === 'admin') {
                 return redirect('/dashboard');
-            } else if (Auth::user()->role === 'user') {
+            } 
+            else if (Auth::user()->role === 'user') {
                 return redirect('/homepage');
             }
         }
         return $next($request);
     }
 
-}
+}   

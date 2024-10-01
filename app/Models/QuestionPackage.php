@@ -17,7 +17,6 @@ class QuestionPackage extends Model
     protected $fillable=[
         'title',
         'author_id',
-        'is_approved',
         'upload_count',
         'question_count',
     ];
@@ -47,8 +46,5 @@ class QuestionPackage extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function approvals()
-    {
-        return $this->hasMany(QuestionPackageApproval::class);
-    }
+    
 }

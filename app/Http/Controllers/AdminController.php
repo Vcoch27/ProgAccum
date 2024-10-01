@@ -27,7 +27,7 @@ class AdminController extends Controller
         $user = Auth::user();
 
         if ($user->role === 'admin') {
-            return view('admin/dashboard/index');
+            return view('admin/dashboard/index1');
         } 
         abort(401);
     }

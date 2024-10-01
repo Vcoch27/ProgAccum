@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('client/pages/welcome');
 })->name('welcome')->middleware([CheckRole::class]);
 
 Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
