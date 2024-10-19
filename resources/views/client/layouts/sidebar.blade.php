@@ -13,24 +13,9 @@
   <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="./assets/img/blurred-image-1.jpg">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="javascript:void(0)" onclick="scrollToDownload()">
-          <i class="now-ui-icons arrows-1_cloud-download-93"></i>
-          <p>Start now</p>
+        <a href="#" class="nav-link " id="navbarDropdownMenuLink1" data-toggle="dropdown">
+          <p>Upgrade Premium</p>
         </a>
-      </li>
-      <li class="nav-item dropdown">
-        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink1" data-toggle="dropdown">
-          <i class="now-ui-icons design_app"></i>
-          <p>Components</p>
-        </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink1">
-          <a class="dropdown-item" href="./index.html">
-            <i class="now-ui-icons business_chart-pie-36"></i> All components
-          </a>
-          <a class="dropdown-item" target="_blank" href="https://demos.creative-tim.com/now-ui-kit/docs/1.0/getting-started/introduction.html">
-            <i class="now-ui-icons design_bullet-list-67"></i> Documentation
-          </a>
-        </div>
       </li>
       <li class="nav-item">
         <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/CreativeTim" target="_blank">
@@ -103,3 +88,17 @@
   </div>
 </div>
 </nav>
+<script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var navbar = document.querySelector('nav.navbar');
+            var colorOnScroll = 400; // Scroll threshold
+
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > colorOnScroll) {
+                    navbar.classList.remove('navbar-transparent');
+                } else {
+                    navbar.classList.add('navbar-transparent');
+                }
+            });
+        });
+    </script>

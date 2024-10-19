@@ -3,6 +3,8 @@
 use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Question\QuestionPackagesController;
+use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\CheckRole;
 use Illuminate\Support\Facades\Route;
@@ -14,6 +16,8 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
 Route::get('/homepage', [UserController::class, 'index'])->name('homepage');
+Route::get('/test', [TestController::class, 'index'])->name('homepage');
+
 
 // Nhóm route cho profile yêu cầu phải đăng nhập
 Route::middleware('auth')->group(function () {
@@ -26,5 +30,6 @@ Route::middleware('auth')->group(function () {
 Route::get('auth/google', [GoogleAuthController::class, 'redirect'])->name('google-auth');
 Route::get('auth/google/call-back', [GoogleAuthController::class, 'callbackGoogle']);
 
-
-require __DIR__.'/auth.php';
+// 
+Route::get('/packages/{id}', [QuestionPackagesController::class, 'show'])->name('packages.show');
+require __DIR__ . '/auth.php';

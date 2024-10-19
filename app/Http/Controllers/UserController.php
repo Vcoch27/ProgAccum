@@ -2,19 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\QuestionPackage;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
     public function index()
     {
-        
-        $user = Auth::user();
 
+        if (!Auth::check()) {
+            abort(401, 'Unauthorized');
+        }
+        $user = Auth::user();
         if ($user->role === 'user') {
-            return view('client/pages/homepage');
-        } 
-        abort(401);
+            $packages = QuestionPackage::all();
+            return view('client/pages/homepage', compact('packages'));
+        } else {
+            abort(401);
+        }
     }
 }

@@ -24,11 +24,14 @@ class AdminController extends Controller
      */
     public function index()
     {
+        if (!Auth::check()) {
+            abort(401, 'Unauthorized');
+        }
         $user = Auth::user();
 
         if ($user->role === 'admin') {
             return view('admin/dashboard/index1');
-        } 
+        }
         abort(401);
     }
 }

@@ -7,7 +7,8 @@
     <link href="{{ asset('client/assets/demo/demo.css') }}" rel="stylesheet" />
 @endpush
  <footer class="footer pt-5 mt-5">
-  <div class="container">
+  <h1>Footer đây</h1>
+  <!-- <div class="container">
     <div class=" row">
       <div class="col-md-3 mb-4 ms-auto">
         <div>
@@ -175,5 +176,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </footer>
